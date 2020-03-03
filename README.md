@@ -18,21 +18,23 @@ Otherwise you can setup the airvisual config file
 
 
 ## Usage
+
 AirVisualClient has a easy access static Repository.
+
 ```php
 use Digicraft\AirVisualRepository;
 
 
-// List Countries are supported by AirVisual API
-AirVisualRepository::listSupportedCountries();
+// Get Countries are supported by AirVisual API
+AirVisualRepository::getSupportedCountries();
 
 
-// List States of given country supported by AirVisual API
-AirVisualRepository::listSupportedStates($country);
+// Get States of given country supported by AirVisual API
+AirVisualRepository::getSupportedStates($country);
 
 
-// List Cities supported by AirVisual API giving a country and state param
-AirVisualRepository::listSupportedCities($country, $state);
+// Get Cities supported by AirVisual API giving a country and state param
+AirVisualRepository::getSupportedCities($country, $state);
 
 
 // Get nearest city data (GPS coordinates)
@@ -42,9 +44,8 @@ AirVisualRepository::getNearestCityData($lon, $lat);
 // Get specified city data
 AirVisualRepository::getCityData($country, $state, $city);
 
-
-
 ```
+
 ## License
 
 AirVisualClient is open-sourced software licensed under the [MIT license](LICENSE.md).
