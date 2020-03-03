@@ -1,0 +1,52 @@
+{
+    "name": "digicraft/laravel-airvisual",
+    "description": "Easy client for AirVisual API",
+    "type": "library",
+    "homepage": "https://github.com/digicraft/laravel-airvisual",
+    "keywords": ["laravel", "api", "airvision", "air"],
+    "license": "MIT",
+    "authors": [{
+            "name": "DigiCraft Team",
+            "email": "support@digicloud.store"
+        },
+        {
+            "name": "Elias Peraza",
+            "email": "edpmath@digicloud.store"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "ext-curl": ">=7.47.1",
+        "illuminate/support": "~5.8.0|^6.0|^7.0"
+    },
+    "require-dev": {},
+
+    "autoload": {
+        "psr-4": {
+            "Digicraft\\AirVisual\\": "src"
+        },
+        "files": []
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Digicraft\\AirVisual\\AirVisualServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
