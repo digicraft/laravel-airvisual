@@ -6,22 +6,24 @@ class AirVisualRepository extends Repository
     /**
      * Get Countries are supported by AirVisual API
      *
-     * @return string
+     * @return array
      */
     public static function getSupportedCountries()
     {
-        return self::staticGet('countries');
+        $data = json_decode(self::staticGet('countries'), true);
+        return $data;
     }
 
     /**
      * Get States of given country supported by AirVisual API
      *
      * @param string $country
-     * @return string
+     * @return array
      */
     public static function getSupportedStates(string $country)
     {
-        return self::staticGet('states', compact('country'));
+        $data = json_decode(self::staticGet('states', compact('country')), true);
+        return $data;
     }
 
     /**
@@ -29,11 +31,12 @@ class AirVisualRepository extends Repository
      *
      * @param string $country
      * @param string $state
-     * @return string
+     * @return array
      */
     public static function getSupportedCities(string $country, string $state)
     {
-        return self::staticGet('cities', compact('country', 'state'));
+        $data = json_decode(self::staticGet('cities', compact('country', 'state')), true);
+        return $data;
     }
 
     /**
@@ -41,11 +44,12 @@ class AirVisualRepository extends Repository
      *
      * @param string $longitude
      * @param string $latitude
-     * @return string
+     * @return array
      */
     public static function getNearestCityData($lon, $lat)
     {
-        return self::staticGet('nearest_city', compact('lon', 'lat'));
+        $data = json_decode(self::staticGet('nearest_city', compact('lon', 'lat')), true);
+        return $data;
     }
 
     /**
@@ -58,6 +62,7 @@ class AirVisualRepository extends Repository
      */
     public static function getCityData(string $country, string $state, string $city)
     {
-        return self::staticGet('city', compact('country', 'state', 'city'));
+        $data = json_decode(self::staticGet('city', compact('country', 'state', 'city')), true);
+        return $data;
     }
 }
