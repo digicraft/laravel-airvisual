@@ -32,7 +32,7 @@ abstract class Repository
      * @param array $requestBody
      * @return string
      */
-    protected static function staticGet(string $uri, array $requestBody = [])
+    protected static function staticGet(string $uri, array $requestBody = [], $ip = null)
     {
         $apiKey = config('airvisual.api_key');
 
@@ -42,6 +42,13 @@ abstract class Repository
         }
 
         $curl = curl_init();
+
+        if ($ip != null) {
+            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+                "key: $key",
+                "x-forwarded-for: $ip"
+            ));
+        }
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $endPoint,

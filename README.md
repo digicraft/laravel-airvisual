@@ -38,7 +38,10 @@ AirVisualRepository::getSupportedCities($country, $state);
 
 
 // Get nearest city data (GPS coordinates)
-AirVisualRepository::getNearestCityData($lon, $lat);
+AirVisualRepository::getNearestCityData($lat, $long);
+
+// Get nearest city data (IP)
+AirVisualRepository::getNearestIpCityData($ip);
 
 
 // Get specified city data

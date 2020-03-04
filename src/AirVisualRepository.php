@@ -46,9 +46,21 @@ class AirVisualRepository extends Repository
      * @param string $latitude
      * @return array
      */
-    public static function getNearestCityData($lon, $lat)
+    public static function getNearestCityData($lat, $lon)
     {
-        $data = json_decode(self::staticGet('nearest_city', compact('lon', 'lat')), true);
+        $data = json_decode(self::staticGet('nearest_city', compact('lat', 'lon')), true);
+        return $data;
+    }
+
+    /**
+     * Get nearest city data (IP)
+     *
+     * @param string $ip
+     * @return array
+     */
+    public static function getNearestIpCityData($ip)
+    {
+        $data = json_decode(self::staticGet('nearest_city', compact('ip'), $ip), true);
         return $data;
     }
 
